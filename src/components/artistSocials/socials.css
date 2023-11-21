@@ -1,0 +1,27 @@
+.socials-container {
+    justify-content: flex-start;
+    padding: 0 1rem;
+    align-items: center;
+    margin: 1rem 0;
+    overflow: hidden;
+    overflow-x: scroll;
+}
+
+.social {
+    position: relative;
+}
+.social-type {
+    display: none;
+    text-transform: capitalize;
+    position: absolute;
+    top: 120%;
+    padding: .5rem;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    z-index: 99;
+}
+
+.social:hover .social-type {
+    display: block;
+}
