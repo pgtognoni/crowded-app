@@ -1,3 +1,16 @@
 .map-container{
     height: 400px;
 }
+
+.address {
+    margin-bottom: 1rem;
+}
+
+.show-map {
+    max-width: 200px !important;
+    width: 200px;
+    margin: 0 auto;
+    cursor: pointer;
+    margin-top: 1rem;
+    text-align: center;
+}

@@ -1,13 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Foldit:wght@600&family=Lexend:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+:root {
+  --box-shadow: 1px 1px 5px var(--mid-shadow);
+  --nav-shadow: 0px 1px 20px var(--light-shadow);
+  --text-white: #f6f6f6;
+  --text-gray: #9a9a9a;
+  --text-black: #3c3c3c;
+  --light-shadow: #f1f1f15c;
+  --mid-shadow: #e6e6e6;
+  --bg-gray: #e1e1e1;
+  --border-btn: 1px solid var(--text-white);
+  --yellow: #f5e618;
+  --gray-transparent: rgba(0, 0, 0, 0.5);
+  --light-transparent: rgba(250,250,250,0.8);
+  --mid-transparent: rgba(250,250,250,0.65);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--text-white) !important;
+  background-image: url('https://res.cloudinary.com/dgamncxcz/image/upload/v1700620110/gradiente_qcnbhx.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%; 
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.text-strong {
+  font-weight: 500;
 }
+
+.btn-border {
+  border: var(--border-btn);
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  padding: 0.2rem .6rem;
+}
+
+.home-page {
+  padding: 2rem 0;
+  position: relative;
+}
+
+
+.event-homePage {
+  position: absolute;
+  right: .5rem;
+  transition: all .4s ease-in-out;
+}
+
+.home-description {
+  border: 1px solid var(--light-shadow);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  height: calc(100vh - 100px);
+  padding: 1rem;
+  box-shadow: var(--box-shadow);
+  -webkit-box-shadow: var(--box-shadow);
+  -moz-box-shadow: var(--box-shadow);
+}
+
+.favorites-homePage {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  transition: all .6s ease-in-out;
+}
+

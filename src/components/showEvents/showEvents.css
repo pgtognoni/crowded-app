@@ -1,0 +1,77 @@
+.accordion-container {
+    padding: .2rem;
+    margin-top: 2rem;
+}
+
+.item-container {
+    margin-bottom: 1rem;
+    padding: 1rem 0;
+    color: var(--text-black);
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+    background-color: var(--light-transparent) !important;
+}
+
+.active {
+    opacity: 1;
+}
+
+.event-data-container:first-child {
+    margin-bottom: 1rem;
+}
+
+.venue-location {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: calc(100% - 80px);
+}
+
+
+@media screen and (min-width: 576px) {
+    .accordion-container {
+        padding: 1rem;
+    }
+
+    .event-data-container:first-child {
+        margin-bottom: 0rem;
+        margin-right: 1rem;
+    }
+
+    .venue-location {
+        width: unset;
+    }
+    
+}
+
+.venue-name {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.description {
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 0rem .5rem;
+    margin: 1rem 0;
+    background-color: var(--light-shadow);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    margin-top: 1rem !important;
+}
+
+.accordion-button {
+    background-color: transparent !important;
+}
+
+@media screen and (min-width: 992px) {
+    .accordion-btn {
+        transform: rotate(-90deg);
+        margin-left: 1rem;
+    }
+}
+
+.accordion-container .show-map {
+    border-color: var(--text-black);
+}

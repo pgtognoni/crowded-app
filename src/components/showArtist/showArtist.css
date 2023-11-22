@@ -1,0 +1,18 @@
+.artist-container {
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem 1.5rem;
+}
+
+.artist-container h1 {
+    font-family: 'Roboto', sans-serif;
+}
+
+.img-container {
+    width: 150px;
+}
+
+.img-container img {
+    width: 100%;
+    border-radius: 50%;
+}

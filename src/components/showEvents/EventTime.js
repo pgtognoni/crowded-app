@@ -4,13 +4,13 @@ import { getDatetimeString, getStarTime } from './helpers';
 
 function EventTime({event}) {
   return (
-    <>
-        <AccessTimeIcon fontSize="large"/>
-            <div>
-            <p className='m-0'>{getDatetimeString(event.datetime)}</p>
-            <p className='m-0'>{getStarTime(event.datetime)}</p>
-        </div>
-    </>
+    <div className='text-start d-flex align-items-center gap-2 event-data-container'>
+      <AccessTimeIcon fontSize="large"/>
+      <div className='venue-location'>
+        <p className='m-0'>{getDatetimeString(event.datetime)}</p>
+        <p className='m-0'>{getStarTime(event.datetime)}</p>
+      </div>
+    </div>
   )
 }
 

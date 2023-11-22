@@ -1,17 +1,16 @@
 import React from 'react'
 import RoomOutlinedIcon from '@mui/icons-material/RoomOutlined';
 
-
 function EventLocation({event}) {
   return (
-    <>
-    <RoomOutlinedIcon fontSize="large"/>
-    <div>
-        <h3 className='m-0'>{event.venue.name}</h3>
+    <div className='text-start d-flex align-items-center gap-2 event-data-container'>
+      <RoomOutlinedIcon fontSize="large"/>
+      <div className='venue-location'>
+        <span className='venue-name'>{event.venue.name}</span><br/>
         <span>{event.venue.city}, </span>
         <span> {event.venue.country}</span>
+      </div>
     </div>
-    </>
   )
 }
 

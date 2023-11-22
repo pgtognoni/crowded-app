@@ -1,0 +1,42 @@
+.navbar-container {
+    background-image: url('https://res.cloudinary.com/dgamncxcz/image/upload/v1700620110/gradiente_qcnbhx.png');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: top;
+}
+
+.mobile-nav {
+    align-items: center;
+    padding: 1rem 0rem;
+    background-color: var(--bg-white);
+    box-shadow: var(--nav-shadow);
+    -webkit-box-shadow: var(--nav-shadow);
+    -moz-box-shadow: var(--nav-shadow);
+}
+
+.mobile-nav a {
+    color: var(--text-white);
+    text-decoration: none;
+}
+
+.brand {
+    font-family: 'Audiowide', sans-serif;
+    font-size: 3rem;
+}
+
+@media screen and (min-width: 576px) {
+
+    .mobile-nav {
+        padding: 1rem 1.5rem;
+    }
+    
+    .brand {
+        font-size: 2rem;
+    }
+    }
+
+.btn-border.favorites-link {
+    font-size: 1.2rem;
+    max-width: 100px;
+    text-align: center;
+}
