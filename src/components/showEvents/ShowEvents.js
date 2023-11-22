@@ -14,8 +14,10 @@ function ShowEvents({handleOnClick, activeIndex}) {
     const eventsData = useSelector(state => state.artist.events)
 
     useEffect(() => {
-        if (eventsData) {
+        if (eventsData.length > 0) {
             setEvents(eventsData)
+        } else {
+            setEvents([])
         }
     }, [eventsData]);
 

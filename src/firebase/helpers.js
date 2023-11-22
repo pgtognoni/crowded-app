@@ -22,7 +22,6 @@ export const getFavoriteList = async (userId) => {
     const usersRef = collection(firestore, 'users');
     const userDocRef = doc(usersRef, userId);
     const user = await getDoc(userDocRef)
-    console.log(user)
     if (user.data()) {
       const array = user.data().favorites
       return array
@@ -36,7 +35,6 @@ export const addFavorite = async (userId, favorite) => {
     if (user.data()) {
       const array = user.data().favorites
       array.push(favorite)
-      console.log(array)
       await setDoc(userDocRef, {favorites: arrayUnion(favorite)}, {merge: true})
     }
 }
@@ -49,7 +47,6 @@ export const removeFavorite = async (userId, favorite) => {
       const array = user.data().favorites
       const index = array.findIndex(fav => fav.id === favorite.id)
       array.splice(index, 1)
-      console.log(array)
       await setDoc(userDocRef, {favorites: array}, {merge: true})
     }
 }

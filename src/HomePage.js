@@ -22,7 +22,7 @@ function HomePage() {
 
   const handleOnClick = (index, event) => {
     const scrollTop = document.documentElement.scrollTop
-    eventRef.current.style.top = `${scrollTop + 20}px`
+    eventRef.current.style.top = `${scrollTop + 100}px`
     favRef.current.style.right = '-100%'
 
     if (index !== activeIndex) {
@@ -43,8 +43,8 @@ function HomePage() {
     <div className='home-page container-fluid'>
     {events.length === 0 && <WelcomeComponent />}
     {events.length !== 0 && <ClearSearch />}
-      <div className='row '>
-        <div className='col-12 col-lg-6'>
+      <div className={`row`}>
+        <div className={`col-12 col-lg-6`}>
           <ShowArtist />
           <ArtistSocials />
           <ShowEvents handleOnClick={handleOnClick} activeIndex={activeIndex} />

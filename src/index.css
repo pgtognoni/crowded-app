@@ -56,6 +56,9 @@ body {
   position: relative;
 }
 
+.home-page >div {
+  transition: all .5s ease-in-out;
+}
 
 .event-homePage {
   position: absolute;
@@ -68,11 +71,17 @@ body {
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
-  height: calc(100vh - 100px);
+  /* height: calc(100vh - 100px); */
+  background-color: var(--light-transparent);
   padding: 1rem;
   box-shadow: var(--box-shadow);
   -webkit-box-shadow: var(--box-shadow);
   -moz-box-shadow: var(--box-shadow);
+  color: var(--text-black);
+}
+
+.home-description .show-map {
+  border-color: var(--text-black);
 }
 
 .favorites-homePage {

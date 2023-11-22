@@ -37,7 +37,6 @@ export const searchEvents = async (artistName) => {
             return event;
         });
 
-        // console.log(updatedEvents);
         return updatedEvents;
     } catch (error) {
         console.error('Error fetching events:', error);

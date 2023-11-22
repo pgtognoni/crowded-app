@@ -28,7 +28,6 @@ function App() {
   const getFavorites = async () => {
     try {
       const res = await getFavoriteList(window.localStorage.getItem('userIP'))
-      console.log(res)
       if (res && res.length > 0) dispatch(addFavorites(res))
     } catch (error) {
       console.log(error)

@@ -16,7 +16,7 @@ const artistSlice = createSlice({
         setArtist: (state, action) => {state.artist = action.payload},
         addFavorites: (state, action) =>{state.favorites = action.payload},
         setMessage: (state, action) => {state.message = action.payload},
-        resetState: (state) => {state.artist = {}; state.events = []; state.message = ''}
+        resetState: (state) => { state.artist = {}; state.events = []; state.message = ''}
     }
 })
 
