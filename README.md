@@ -9,11 +9,14 @@ WIT is a serveless application built with ReactJs and using APIs (Bands In Town 
 
 ## Getting Started
 
+You can visit the App clicking here: [WIT](https://crowded-bands.web.app/)
+
+Or you can: 
+
 ### Installing
 DowndLoad the code from GitHub or from the Zipfile
 
 ### Executing program
-
 
 ```
 npm install
