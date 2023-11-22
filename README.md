@@ -25,8 +25,8 @@ you will see the app in your localhost directory
 ## Authors
 
 
-ex. Pablo Gonzalez Tognoni 
-ex. [LinkedIn](https://www.linkedin.com/in/pgtognoni/)
+Pablo Gonzalez Tognoni 
+[LinkedIn](https://www.linkedin.com/in/pgtognoni/)
 
 
 ## License
