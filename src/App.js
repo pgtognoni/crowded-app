@@ -3,8 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import HomePage from './HomePage';
 import FavoritesList from './components/addFavourites/FavoritesList';
 import NavBar from './components/navBar/NavBar';
-import axios from 'axios';
-import { createUser, getFavoriteList } from './firebase/helpers'
+// import axios from 'axios';
+import { createUser, getFavoriteList, generateID } from './firebase/helpers'
 import { useDispatch } from 'react-redux';
 import { addFavorites } from './reducer/artistReducer';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -13,13 +13,13 @@ function App() {
 
   const dispatch = useDispatch()
 
-  const getData = async () => {
+  const getUserId = async () => {
+    const id = generateID()
     try {
-      const res = await axios.get("https://api.ipify.org/?format=json");
-      if (res.status === 200){
-        createUser(res.data.ip)
-        window.localStorage.setItem('userIP', res.data.ip)
-      }
+        const res = await createUser(id)
+        if (res.status === 200) {
+          window.localStorage.setItem('userID', id)
+        }
     } catch (error) {
       console.log(error)
     }
@@ -35,10 +35,10 @@ function App() {
   }
 
   useEffect(() => {
-    if (window.localStorage.getItem('userIP')) {
+    if (window.localStorage.getItem('userID')) {
       getFavorites()
     } else {
-      getData();
+      getUserId();
     }
   }, [])
 

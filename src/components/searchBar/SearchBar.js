@@ -15,10 +15,8 @@ function SearchBar() {
     const onSubmit = async (e) => {
         e.preventDefault()
         dispatch(resetState())
-
         // replace special characters in the artist name with their codes
         const name = encodeSpecialCharacters(artistName)
-        console.log(store.getState())
         // search for the artist
         const artist = await searchApi(name)
         if (artist === undefined) {
@@ -28,7 +26,6 @@ function SearchBar() {
             // check if the artist event is already in favorites
             const events = updateEvents(artist.events, favorites)
             artist.events = events
-            console.log(artist)
             dispatch(setState(artist))
             dispatch(setMessage(''))
         }

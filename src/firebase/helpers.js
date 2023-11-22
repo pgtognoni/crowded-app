@@ -1,6 +1,7 @@
 import { firestore } from './config';
 import { collection, getDoc, doc, arrayUnion, setDoc } from '@firebase/firestore';
 import './config';
+import { v4 as uuidv4 } from 'uuid';
 
 export const createUser = async (userIP) => {
     const userRef = doc(firestore, "users", userIP);
@@ -13,6 +14,7 @@ export const createUser = async (userIP) => {
             });
         }
         console.log('User document created successfully');
+        return {status: 200, message: 'User document created successfully'}
       } catch (error) {
         console.error('Error creating user document:', error);
       }
@@ -49,4 +51,8 @@ export const removeFavorite = async (userId, favorite) => {
       array.splice(index, 1)
       await setDoc(userDocRef, {favorites: array}, {merge: true})
     }
+}
+
+export function generateID() {
+  return uuidv4();
 }
