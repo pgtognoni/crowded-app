@@ -12,7 +12,7 @@ function MapComponent({event}) {
       <div className='address-container text-start m-0'>
         <EventAddress event={event} />
       </div>
-      <div onClick={() => setShowMap(!showMap)} className='btn-border show-map mb-3'>
+      <div onClick={() => setShowMap(!showMap)} className='btn-border show-map mb-3 mt-3'>
         {showMap ? <span>Hide Map</span> : <span>Show Map</span>}
       </div>
       {showMap && <GoogleMapComponent event={event}  />}

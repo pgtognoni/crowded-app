@@ -61,7 +61,7 @@ function FavoritesList() {
                         <EventLocation event={fav} className=''/>
                         <EventTime event={fav} className=''/>
                     </div>
-                    <div onClick={() => setShowMore(!showMore)} className='btn-border show-map mb-3'>
+                    <div onClick={() => setShowMore(!showMore)} className='btn-border show-map mb-3 mt-3'>
                         {showMore ? <span>Hide Information</span> : <span>Show More</span>}
                     </div>
                     {showMore && <>

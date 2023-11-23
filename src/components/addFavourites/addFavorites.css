@@ -23,6 +23,7 @@ svg.favorite {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
+    width: 150px;
     padding: .5rem;
     background-color:  var(--light-transparent) !important;
     border-radius: 5px;
@@ -33,6 +34,8 @@ svg.favorite {
     -moz-box-shadow: 0 0 5px rgba(0,0,0,.3);
     z-index: 99;
     font-size: 1rem;
+    text-align: center;
+    transition: all .3s ease-in-out 3s;
 }
 
 .favorites-container:hover .favorite-text {

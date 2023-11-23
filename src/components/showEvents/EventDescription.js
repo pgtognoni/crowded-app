@@ -34,7 +34,7 @@ function EventDescription({event}) {
                 </div>
             </div>
         </div>
-        <div className='row description'>
+        <div className='row'>
             {event.description && <p className='description'>{event.description}</p>}
         </div>
     </div>
