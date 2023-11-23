@@ -18,6 +18,8 @@ function HomePage() {
   const favRef = useRef(null)
   const favorites = useSelector(state => state.artist.favorites)
   const events = useSelector(state => state.artist.events)
+  const message = useSelector(state => state.artist.message)
+  const artist = useSelector(state => state.artist.artist)
 
 
   const handleOnClick = (index, event) => {
@@ -47,6 +49,8 @@ function HomePage() {
         <div className={`col-12 col-lg-6`}>
           <ShowArtist />
           <ArtistSocials />
+          {artist.length !== 0 && events.length === 0 && 
+            <h1 className='text-center mt-3'>{message}</h1>}
           <ShowEvents handleOnClick={handleOnClick} />
         </div>
         <div className='d-none d-lg-block col-lg-6 event-homePage' ref={eventRef}>
@@ -56,7 +60,7 @@ function HomePage() {
           </div>}
         </div>
         <div className='d-none d-lg-block col-lg-6 favorites-homePage' ref={favRef}>
-          {events.length !== 0 && favorites.length > 0 && <>
+          {favorites.length > 0 && <>
             <h1 className='text-center'>Favorites</h1>
             <FavoritesList />
           </>}

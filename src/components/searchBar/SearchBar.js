@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { searchApi, encodeSpecialCharacters, updateEvents } from './helpers';
-import { setState, resetState, setMessage, setEvents } from '../../reducer/artistReducer';
+import { setState, resetState, setMessage } from '../../reducer/artistReducer';
 import SearchIcon from '@mui/icons-material/Search';
-import store from '../../reducer/store';
 import './search.css'
 
 function SearchBar() {
@@ -26,8 +25,12 @@ function SearchBar() {
             // check if the artist event is already in favorites
             const events = updateEvents(artist.events, favorites)
             artist.events = events
+            if (artist.events.length === 0) {
+                dispatch(setMessage('No events found'))
+            } else {
+              dispatch(setMessage(''))
+            }
             dispatch(setState(artist))
-            dispatch(setMessage(''))
         }
     }
     

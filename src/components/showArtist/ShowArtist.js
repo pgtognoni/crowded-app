@@ -17,7 +17,7 @@ function ShowArtist() {
 
   return (
     <div>
-    {message && <h1 className='error-message'>{message}</h1>}
+    {message && artistData.length === 0 && <h1 className='error-message'>{message}</h1>}
     {artist && artist.map((artist, index) => {
         return(
             <ArtistData artist={artist} key={index} />
