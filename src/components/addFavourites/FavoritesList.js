@@ -27,7 +27,7 @@ function FavoritesList() {
         const options = {
             root: null,
             rootMargin: '0px',
-            threshold: 0.5, // Adjust this threshold as needed
+            threshold: 0.2, // Adjust this threshold as needed
           };
       
           const observer = new IntersectionObserver(handleIntersection, options);

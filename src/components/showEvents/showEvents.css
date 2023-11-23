@@ -3,12 +3,16 @@
     margin-top: 2rem;
 }
 
+.item-parent {
+    position: relative;
+}
+
 .item-container {
     margin-bottom: 1rem;
     padding: 1rem 0;
     color: var(--text-black);
     opacity: 0;
-    transition: opacity .5s ease-in-out;
+    transition: opacity .2s ease-in-out;
     background-color: var(--light-transparent) !important;
 }
 

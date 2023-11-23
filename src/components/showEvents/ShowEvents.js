@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Accordion from 'react-bootstrap/Accordion';
 import EventData from './EventData';
@@ -8,7 +8,7 @@ import MapComponent from '../map/MapComponent';
 import { handleIntersection } from './helpers';
 import './showEvents.css';
 
-function ShowEvents({handleOnClick, activeIndex}) {
+function ShowEvents({handleOnClick}) {
 
     const [ events, setEvents ] = useState([])
     const eventsData = useSelector(state => state.artist.events)
@@ -51,7 +51,7 @@ function ShowEvents({handleOnClick, activeIndex}) {
         <Accordion defaultActiveKey="0" className='accordion-container p-0' >
             {events &&
                 events.map((event, index) => (
-                    <div key={index}>
+                    <div key={index} className='item-parent'>
                     <Accordion.Item eventKey={index} className='container item-container'>
                         <div className='row'>
                             <div className='col-12 col-sm-8 ms-3'>

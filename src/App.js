@@ -5,14 +5,13 @@ import FavoritesList from './components/addFavourites/FavoritesList';
 import NavBar from './components/navBar/NavBar';
 // import axios from 'axios';
 import { createUser, getFavoriteList, generateID } from './firebase/helpers'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addFavorites, setUserId } from './reducer/artistReducer';
 import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
 
   const dispatch = useDispatch()
-  const userId = useSelector(state => state.artist.userId)
 
 
   const getUserId = async () => {

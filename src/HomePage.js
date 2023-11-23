@@ -47,7 +47,7 @@ function HomePage() {
         <div className={`col-12 col-lg-6`}>
           <ShowArtist />
           <ArtistSocials />
-          <ShowEvents handleOnClick={handleOnClick} activeIndex={activeIndex} />
+          <ShowEvents handleOnClick={handleOnClick} />
         </div>
         <div className='d-none d-lg-block col-lg-6 event-homePage' ref={eventRef}>
           {show && <div className='home-description'>
