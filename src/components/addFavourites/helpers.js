@@ -11,7 +11,7 @@ export function filterArray(array,event) {
     }
 
     const index = favArr.findIndex(fav => fav.id === eventFav.id)
-    const userId = window.localStorage.getItem('userIP')
+    const userId = window.localStorage.getItem('WITuserID')
     if (index !== -1) {
         favArr.splice(index, 1)
         removeFavorite(userId,eventFav)

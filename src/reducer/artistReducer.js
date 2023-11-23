@@ -4,6 +4,7 @@ const initialState = {
     artist: {},
     events: [],
     favorites: [],
+    userId: '',
     message: ''
 }
 
@@ -16,6 +17,7 @@ const artistSlice = createSlice({
         setArtist: (state, action) => {state.artist = action.payload},
         addFavorites: (state, action) =>{state.favorites = action.payload},
         setMessage: (state, action) => {state.message = action.payload},
+        setUserId: (state, action) => {state.userId = action.payload},
         resetState: (state) => { state.artist = {}; state.events = []; state.message = ''}
     }
 })
@@ -26,7 +28,8 @@ export const {
     setEvents,
     addFavorites,
     resetState,
-    setMessage
+    setMessage,
+    setUserId
 } = artistSlice.actions;
 
 export default artistSlice;

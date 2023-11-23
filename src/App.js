@@ -5,13 +5,15 @@ import FavoritesList from './components/addFavourites/FavoritesList';
 import NavBar from './components/navBar/NavBar';
 // import axios from 'axios';
 import { createUser, getFavoriteList, generateID } from './firebase/helpers'
-import { useDispatch } from 'react-redux';
-import { addFavorites } from './reducer/artistReducer';
+import { useDispatch, useSelector } from 'react-redux';
+import { addFavorites, setUserId } from './reducer/artistReducer';
 import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
 
   const dispatch = useDispatch()
+  const userId = useSelector(state => state.artist.userId)
+
 
   const getUserId = async () => {
     const id = generateID()
@@ -19,15 +21,16 @@ function App() {
         const res = await createUser(id)
         if (res.status === 200) {
           window.localStorage.setItem('WITuserID', id)
+          dispatch(setUserId(id))
         }
     } catch (error) {
       console.log(error)
     }
   };
 
-  const getFavorites = async () => {
+  const getFavorites = async (id) => {
     try {
-      const res = await getFavoriteList(window.localStorage.getItem('WITuserID'))
+      const res = await getFavoriteList(id)
       if (res && res.length > 0) dispatch(addFavorites(res))
     } catch (error) {
       console.log(error)
@@ -35,8 +38,12 @@ function App() {
   }
 
   useEffect(() => {
+    const id = window.localStorage.getItem('WITuserID')
+    if (id) {
+      dispatch(setUserId(id))
+      getFavorites(id)
+    } 
     if (window.localStorage.getItem('WITuserID')) {
-      getFavorites()
     } else {
       getUserId();
     }
