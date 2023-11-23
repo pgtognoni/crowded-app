@@ -18,7 +18,7 @@ function App() {
     try {
         const res = await createUser(id)
         if (res.status === 200) {
-          window.localStorage.setItem('userID', id)
+          window.localStorage.setItem('WITuserID', id)
         }
     } catch (error) {
       console.log(error)
@@ -27,7 +27,7 @@ function App() {
 
   const getFavorites = async () => {
     try {
-      const res = await getFavoriteList(window.localStorage.getItem('userIP'))
+      const res = await getFavoriteList(window.localStorage.getItem('WITuserID'))
       if (res && res.length > 0) dispatch(addFavorites(res))
     } catch (error) {
       console.log(error)
@@ -35,7 +35,7 @@ function App() {
   }
 
   useEffect(() => {
-    if (window.localStorage.getItem('userID')) {
+    if (window.localStorage.getItem('WITuserID')) {
       getFavorites()
     } else {
       getUserId();
