@@ -60,7 +60,7 @@ function HomePage() {
           </div>}
         </div>
         <div className='d-none d-lg-block col-lg-6 favorites-homePage' ref={favRef}>
-          {favorites.length > 0 && <>
+          {artist.length !== 0 && favorites.length > 0 && <>
             <h1 className='text-center'>Favorites</h1>
             <FavoritesList />
           </>}
